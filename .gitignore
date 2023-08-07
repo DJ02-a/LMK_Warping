@@ -3,6 +3,7 @@ train_results/
 test/
 wandb/
 *.zip
+*.tar
 *.pyc
 .DS_Store
 .vscode

@@ -1,14 +1,14 @@
 {
     BASE: {
-        MODEL_ID: 'CODE_TEMPLATE', 
+        MODEL_ID: 'new_LMK_warping', 
+        RUN_ID: 'output_1024_wo_neck_scaleaug',
         SAME_PROB: 0,
-        BATCH_PER_GPU: 2,
+        BATCH_PER_GPU: 1,
         MAX_STEP: 400000,
         SAVE_ROOT: 'train_results',
         PACKAGES_PATH: '../PACKAGES',
         VAL_SIZE: 16,
-        IMG_SIZE: 512,
-        RUN_ID: 'test',
+        IMG_SIZE: 1024,
     },
 
     # weight of loss
@@ -16,8 +16,8 @@
         W_ADV: 1,
         W_VGG: 0,
         W_ID: 0,
-        W_L1: 0,
-        W_RECON: 0,
+        W_L1: 10,
+        W_BG: 10,
         W_CYCLE: 0,
         W_FEAT: 10,
         W_LPIPS: 10,
@@ -27,8 +27,7 @@
         LOSS: 10,
         TRAIN_IMAGE: 50,
         VALID_IMAGE: 50,
-        WANDB: 100
-        CKPT: 1000,
+        CKPT: 500,
     },
 
     CKPT: {
@@ -67,11 +66,12 @@
                 ]
         }
     },
-    
-    TAGS: {
-        'TRAIN',
-    }
 
+    TAGS: [
+        '1024',
+        'wo_neck',
+        'scale_aug'
+    ]
 
 
 }
